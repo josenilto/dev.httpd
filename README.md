@@ -180,16 +180,45 @@ Agora você deve ver a página de teste correta em cada um dos seguintes URLs no
 
 ✅ Usando os hosts virtuais que criamos anteriormente, crie um novo diretório chamado "private" e coloque um arquivo nele.
 
-
+```bash
+mkdir /www/mysite1.com/html/private
+echo "MySite1.com Private Test file" > /www/mysite1.com/html/private/test.txt
+```
 
 ✅ Crie um arquivo ".htpasswd" contendo um nome de usuário/senha e adicione uma segunda entrada.
 
+```bash
+cd /www/mysite1.com/html/private
+htpasswd -cmb .htpasswd user1 password1
+htpasswd -mb .htpasswd user2 password2
+```
 
 Edite o arquivo "/etc/httpd/conf/httpd.conf" com uma entrada como a seguinte.
 
+```bash
+<Directory "/www/mysite1.com/html/private">  
+    AuthType basic  
+    AuthName "Private Access"  
+    AuthUserFile "/www/mysite1.com/html/private/.htpasswd"  
+    Require valid-user  
+    Order allow,deny  
+    Allow from all
+</Directory>
+```
+
 Recarregue ou reinicie o serviço httpd para que as alterações tenham efeito.
 
+```bash
+service httpd reload
+# OR
+service httpd restart
+```
+
 Agora você deve ser solicitado a fornecer um nome de usuário/senha ao tentar acessar o arquivo a seguir.
+
+```bash
+http://mysite1.com/private/test.txt
+```
 
 ## Conteúdo Gerenciado em Grupo
 
