@@ -149,32 +149,45 @@ restorecon -F -R -v /www
 
 ✅ Os hosts virtuais são definidos no arquivo **`/etc/httpd/conf/httpd.conf`**. A definição dos dois hosts virtuais é mostrada abaixo.
 
+```bash
+NameVirtualHost *:80
 
-NomeVirtualHost *:80
-
-<VirtualHost *:80>
-    Nome do servidor www.meusite1.com
-    Serveralias mysite1.com
-    DocumentRoot /www/mysite1.com/html
+<VirtualHost *:80>  
+    ServerName www.mysite1.com  
+    Serveralias mysite1.com  
+    DocumentRoot /www/mysite1.com/html  
     ErrorLog /www/mysite1.com/logs/mysite1.com-error_log
 </VirtualHost>
 
-<VirtualHost *:80>
-    Nome do servidor www.meusite2.com
-    Serveralias mysite2.com
-    DocumentRoot /www/mysite2.com/html
+<VirtualHost *:80>  
+    ServerName www.mysite2.com  
+    Serveralias mysite2.com  
+    DocumentRoot /www/mysite2.com/html  
     ErrorLog /www/mysite2.com/logs/mysite2.com-error_log
 </VirtualHost>
-
+```
 
 ✅ Recarregue ou reinicie o serviço httpd para que as alterações tenham efeito.
 
+```bash
+service httpd reload
+# OR
+service httpd restart
+```
 
-Desde que o DNS, ou arquivo hosts, resolva os nomes "meusite1.com" e "meusite2.com" para o endereço IP do servidor da Web, as páginas sob as raízes do documento agora serão exibidas para cada host virtual. Para testar isso, você pode alterar seu arquivo hosts com as seguintes entradas.
+✅ Desde que o DNS, ou arquivo hosts, resolva os nomes **`meusite1.com`** e **`meusite2.com`** para o endereço IP do servidor da Web, as páginas sob as raízes do documento agora serão exibidas para cada host virtual. Para testar isso, você pode alterar seu arquivo hosts com as seguintes entradas.
 
+```bash
+127.0.0.1 mysite1.com mysite1
+127.0.0.1 mysite2.com mysite2
+```
 
-Agora você deve ver a página de teste correta em cada um dos seguintes URLs no servidor web.
+✅ Agora você deve ver a página de teste correta em cada um dos seguintes URLs no servidor web.
 
+```bash
+http://mysite1.com/test.txt
+http://mysite2.com/test.txt
+```
 
 ## Diretórios Privados
 
