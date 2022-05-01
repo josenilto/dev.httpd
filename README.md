@@ -227,8 +227,8 @@ Se você preferir que o diretório "cgi-bin" seja colocado em um local diferente
 
 ## Configuração SSL (HTTPS)
 
-✅ A configuração HTTPS não é um requisito do exame RHCE, mas é útil saber, então eu a incluí.
-✅ Se eles ainda não estiverem instalados, instale os mod_sslpacotes e openssl.crypto-utils
+✅ A configuração HTTPS não é um requisito do exame RHCE, mas é útil saber, então eu a incluí.  
+✅ Se eles ainda não estiverem instalados, instale os pacotes **`mod_ssl`** e **`crypto-utils`**.
 
 ```bash
 yum install mod_ssl openssl crypto-utils
