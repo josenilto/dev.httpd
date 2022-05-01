@@ -218,9 +218,26 @@ grupoadicionar webdevs
 
 ✅ Crie um aplicativo CGI simples no diretório, por exemplo, um arquivo chamado **`helloworld.pl`** com o seguinte conteúdo.
 
+```bash
+#!/usr/bin/perl
+print "Content-type: text/html\n\n";
+print "helloWorld!";
+```
+
 ✅ Altere a propriedade e verifique se o arquivo é executável.
 
+```bash
+chown apache.apache helloworld.pl
+chmod u+x helloworld.pl
+```
+
 ✅ Edite o arquivo **`/etc/httpd/conf/httpd.conf`**, incluindo as seguintes entradas na definição do host virtual.
+
+```bash
+ScriptAlias /cgi-bin/ /www/mysite2.com/html/gci-bin/  
+Options +ExecCGI  
+AddHandler cgi-script .pl .cgi
+```
 
 ✅ Então a definição completa fica assim.
 
