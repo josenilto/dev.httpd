@@ -203,3 +203,5 @@ grupoadicionar webdevs
 ✅ Faça login nos dois usuários e verifique se eles podem adicionar e alterar o conteúdo.
 
 ✅ O arquivo com o conteúdo de ambos os usuários é visível usando o seguinte URL.
+
+✅ Observe a um ask configuração, que permite permissão de **`leitura/gravação`** para o grupo. Essa configuração pode ser colocada no arquivo **`~/.bashrc`** ou **`~/.bash_profile`** para cada usuário.
