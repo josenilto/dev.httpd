@@ -10,19 +10,19 @@ Artigos relacionados.
 
 ## Instalação
 
-Para uma instalação mínima do servidor HTTP, emita o comando a seguir.
+✅ Para uma instalação mínima do servidor HTTP, emita o comando a seguir.
 
 ```bash
 yum install httpd
 ```
 
-Se desejar uma instalação mais completa, você pode instalar o grupo de pacotes **`Servidor Web`**.
+✅ Se desejar uma instalação mais completa, você pode instalar o grupo de pacotes **`Servidor Web`**.
 
 ```bash
 yum groupinstall "Web Server"
 ```
 
-Certifique-se de que o arquivo **`/etc/hosts`** contenha referências para o endereço de loopback e o nome do host.
+✅ Certifique-se de que o arquivo **`/etc/hosts`** contenha referências para o endereço de loopback e o nome do host.
 
 ```bash
 127.0.0.1      localhost localhost.localdomain localhost4 localhost4.localdomain4
