@@ -235,9 +235,11 @@ yum install mod_ssl openssl crypto-utils
 ```
 
 ✅ A instalação do mod_sslpacote cria o arquivo de configuração **`/etc/httpd/conf.d/ssl.conf`**, que inclui referências ao certificado e à chave localhost autoassinado padrão. Isso é suficiente para testar a configuração SSL.  
+
 ✅ O serviço httpd deve ser reiniciado para que o módulo seja carregado, mas faremos isso mais tarde.  
 ✅ O genkeycomando pode gerar uma solicitação de certificado ou um novo certificado autoassinado.  
 ✅ Para este teste, criei um novo certificado autoassinado.  
+
 ✅ Lembre-se, se você criptografar o certificado com uma senha, precisará digitá-la toda vez que iniciar o servidor HTTP.
 
 ```bash
@@ -265,6 +267,7 @@ SSLCACertificateFile /etc/pki/tls/certs/intermediate.crt
 
 ✅ Observe que a entrada **`SSLCACertificateFile`** está comentada.  
 ✅ Se você estiver usando um certificado real, provavelmente precisará baixar o pacote intermediário da CA e referenciá-lo usando essa tag.  
+
 ✅ Reinicie o servidor HTTP.
 
 ```bash
