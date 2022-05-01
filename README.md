@@ -205,3 +205,13 @@ grupoadicionar webdevs
 ✅ O arquivo com o conteúdo de ambos os usuários é visível usando o seguinte URL.
 
 ✅ Observe a um ask configuração, que permite permissão de **`leitura/gravação`** para o grupo. Essa configuração pode ser colocada no arquivo **`~/.bashrc`** ou **`~/.bash_profile`** para cada usuário.
+
+## Implantar um aplicativo CGI básico
+
+✅ Crie um diretório chamado **`cgi-bin`** em um host virtual existente.
+
+✅ Crie um aplicativo CGI simples no diretório, por exemplo, um arquivo chamado **`helloworld.pl`** com o seguinte conteúdo.
+
+✅ Altere a propriedade e verifique se o arquivo é executável.
+
+✅ Edite o arquivo **`/etc/httpd/conf/httpd.conf`**, incluindo as seguintes entradas na definição do host virtual.
