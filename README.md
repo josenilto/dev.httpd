@@ -215,3 +215,13 @@ grupoadicionar webdevs
 ✅ Altere a propriedade e verifique se o arquivo é executável.
 
 ✅ Edite o arquivo **`/etc/httpd/conf/httpd.conf`**, incluindo as seguintes entradas na definição do host virtual.
+
+✅ Então a definição completa fica assim.
+
+✅ Recarregue ou reinicie o serviço httpd para que as alterações tenham efeito.
+
+✅ O aplicativo CGI agora pode ser executado na seguinte URL.
+
+Se você preferir que o diretório "cgi-bin" seja colocado em um local diferente, basta alterar a entrada "ScriptAlias" para refletir o local alterado.
+
+
