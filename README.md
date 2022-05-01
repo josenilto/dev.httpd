@@ -47,9 +47,9 @@ Se você estiver usando o firewall do Linux, precisará fazer um furo no firewal
 
 A caixa de diálogo **`Configuração de firewall`** no menu (Sistema > Administração > Firewall) ou iniciada a partir da linha de comando executando o system-config-firewallcomando. Na seção "Serviços confiáveis", role a lista e marque a opção **`WWW (HTTP)`** e clique no botão "Aplicar".
 
-O utilitário "Configuração de firewall" baseado em texto ( system-config-firewall-tui). Esta é a versão baseada em texto da caixa de diálogo acima.
+✅ O utilitário "Configuração de firewall" baseado em texto ( system-config-firewall-tui). Esta é a versão baseada em texto da caixa de diálogo acima.
 
-Usando o iptablesserviço diretamente, conforme descrito aqui . Nesse caso, poderíamos precisar da seguinte entrada.
+✅ Usando o iptablesserviço diretamente, conforme descrito aqui . Nesse caso, poderíamos precisar da seguinte entrada.
 
 ```bash
 iptables -A INPUT -p tcp --dport 80 -j ACCEPT
@@ -57,9 +57,9 @@ iptables -A INPUT -p tcp --dport 80 -j ACCEPT
 
 ## SELinux
 
-Se você estiver usando o SELinux, precisará considerar os seguintes pontos.
+✅ Se você estiver usando o SELinux, precisará considerar os seguintes pontos.
 
-Os booleanos do SELinux associados ao serviço httpd são exibidos usando o getseboolcomando.
+✅ Os booleanos do SELinux associados ao serviço httpd são exibidos usando o getseboolcomando.
 
 ```bash
 getsebool -a | grep httpd
@@ -96,14 +96,14 @@ httpd_use_nfs --> desligado
 httpd_use_openstack --> desligado
 httpd_verify_dns --> desativado
 
-O setseboolcomando é usado para definir um valor booleano específico.
+✅ O setseboolcomando é usado para definir um valor booleano específico.
 
 ```bash
 setsebool httpd_use_nfs on
 setsebool httpd_use_nfs off
 ```
 
-O httpd_sys_content_tcontexto deve ser atribuído a todo o conteúdo.
+✅ O httpd_sys_content_tcontexto deve ser atribuído a todo o conteúdo.
 
 ```bash
 semanage fcontext -a -t httpd_sys_content_t "/var/www/html(/.*)?"
@@ -117,4 +117,4 @@ Mais informações sobre o SELinux podem ser encontradas aqui .
 
 Os Hosts Virtuais permitem que vários sites sejam hospedados por uma única máquina física, com cada site sendo aparentemente independente um do outro. Os hosts virtuais podem ser baseados em IP, mas normalmente são baseados em nome, o que significa que o nome de domínio na URL usada para acessar o servidor da Web determina para qual host virtual a solicitação se destina.
 
-Crie os seguintes diretórios como locais para dois hosts virtuais. Também criei um arquivo de teste em ambas as raízes do documento.
+✅ Crie os seguintes diretórios como locais para dois hosts virtuais. Também criei um arquivo de teste em ambas as raízes do documento.
