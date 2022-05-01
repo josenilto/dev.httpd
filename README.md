@@ -159,3 +159,21 @@ NomeVirtualHost *:80
     DocumentRoot /www/mysite2.com/html
     ErrorLog /www/mysite2.com/logs/mysite2.com-error_log
 </VirtualHost>
+
+
+✅ Recarregue ou reinicie o serviço httpd para que as alterações tenham efeito.
+
+
+Desde que o DNS, ou arquivo hosts, resolva os nomes "meusite1.com" e "meusite2.com" para o endereço IP do servidor da Web, as páginas sob as raízes do documento agora serão exibidas para cada host virtual. Para testar isso, você pode alterar seu arquivo hosts com as seguintes entradas.
+
+
+Agora você deve ver a página de teste correta em cada um dos seguintes URLs no servidor web.
+
+
+## Diretórios Privados
+
+✅ Usando os hosts virtuais que criamos anteriormente, crie um novo diretório chamado "private" e coloque um arquivo nele.
+
+
+
+✅ Crie um arquivo ".htpasswd" contendo um nome de usuário/senha e adicione uma segunda entrada.
