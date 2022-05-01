@@ -57,3 +57,64 @@ iptables -A INPUT -p tcp --dport 80 -j ACCEPT
 
 ## SELinux
 
+Se você estiver usando o SELinux, precisará considerar os seguintes pontos.
+
+Os booleanos do SELinux associados ao serviço httpd são exibidos usando o getseboolcomando.
+
+```bash
+getsebool -a | grep httpd
+```
+
+allow_httpd_anon_write --> off
+allow_httpd_mod_auth_ntlm_winbind --> off
+allow_httpd_mod_auth_pam --> desligado
+allow_httpd_sys_script_anon_write --> off
+httpd_builtin_scripting --> em
+httpd_can_check_spam --> desativado
+httpd_can_network_connect --> desligado
+httpd_can_network_connect_cobbler --> desligado
+httpd_can_network_connect_db --> desativado
+httpd_can_network_memcache --> desativado
+httpd_can_network_relay --> desligado
+httpd_can_sendmail --> desativado
+httpd_dbus_avahi --> em
+httpd_enable_cgi --> em
+httpd_enable_ftp_server --> desligado
+httpd_enable_homedirs --> desativado
+httpd_execmem --> desligado
+httpd_manage_ipa --> desligado
+httpd_read_user_content --> desativado
+httpd_run_stickshift --> desligado
+httpd_setrlimit --> desligado
+httpd_ssi_exec --> desligado
+httpd_tmp_exec --> desligado
+httpd_tty_comm --> em
+httpd_unified --> em
+httpd_use_cifs --> desligado
+httpd_use_gpg --> desativado
+httpd_use_nfs --> desligado
+httpd_use_openstack --> desligado
+httpd_verify_dns --> desativado
+
+O setseboolcomando é usado para definir um valor booleano específico.
+
+```bash
+setsebool httpd_use_nfs on
+setsebool httpd_use_nfs off
+```
+
+O httpd_sys_content_tcontexto deve ser atribuído a todo o conteúdo.
+
+```bash
+semanage fcontext -a -t httpd_sys_content_t "/var/www/html(/.*)?"
+restorecon -F -R -v /var/www/html
+```
+
+Você pode verificar a configuração de contexto atual em arquivos e diretórios usando o comando "ls -alZ".
+Mais informações sobre o SELinux podem ser encontradas aqui .
+
+## Hosts virtuais
+
+Os Hosts Virtuais permitem que vários sites sejam hospedados por uma única máquina física, com cada site sendo aparentemente independente um do outro. Os hosts virtuais podem ser baseados em IP, mas normalmente são baseados em nome, o que significa que o nome de domínio na URL usada para acessar o servidor da Web determina para qual host virtual a solicitação se destina.
+
+Crie os seguintes diretórios como locais para dois hosts virtuais. Também criei um arquivo de teste em ambas as raízes do documento.
