@@ -240,7 +240,7 @@ Se você preferir que o diretório "cgi-bin" seja colocado em um local diferente
 yum install mod_ssl openssl crypto-utils
 ```
 
-✅ A instalação do mod_sslpacote cria o arquivo de configuração **`/etc/httpd/conf.d/ssl.conf`**, que inclui referências ao certificado e à chave localhost autoassinado padrão. Isso é suficiente para testar a configuração SSL.  
+✅ A instalação do pacote **`mod_ssl`**, cria o arquivo de configuração **`/etc/httpd/conf.d/ssl.conf`**, que inclui referências ao certificado e à chave localhost autoassinado padrão. Isso é suficiente para testar a configuração SSL.  
 
 ✅ O serviço httpd deve ser reiniciado para que o módulo seja carregado, mas faremos isso mais tarde.  
 ✅ O genkey comando pode gerar uma solicitação de certificado ou um novo certificado autoassinado.  
