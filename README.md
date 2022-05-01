@@ -29,4 +29,8 @@ yum groupinstall "Web Server"
 
 ✅ Ligue o servidor HTTP e certifique-se de que ele seja iniciado automaticamente na reinicialização.
 
+```bash
+service httpd start
+chkconfig httpd on
+```
 
