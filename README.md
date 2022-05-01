@@ -12,9 +12,9 @@ Artigos relacionados.
 
 Para uma instalação mínima do servidor HTTP, emita o comando a seguir.
 
-``bash
+```bash
 yum install httpd
-´´
+```
 
 Se desejar uma instalação mais completa, você pode instalar o grupo de pacotes "Servidor Web".
 
