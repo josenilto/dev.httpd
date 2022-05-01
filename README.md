@@ -55,6 +55,5 @@ Usando o iptablesserviço diretamente, conforme descrito aqui . Nesse caso, pode
 iptables -A INPUT -p tcp --dport 80 -j ACCEPT
 ```
 
-
-
+## SELinux
 
