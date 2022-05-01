@@ -4,11 +4,17 @@ Este artigo descreve a instalação e configuração de um servidor HTTP no Linu
 
 Lembre-se, os exames são práticos, portanto, não importa qual método você use para obter o resultado, desde que o produto final esteja correto.
 
+
+Artigos relacionados.
+
+
 ## Instalação
 
 Para uma instalação mínima do servidor HTTP, emita o comando a seguir.
 
-
+``bash
+yum install httpd
+´´
 
 Se desejar uma instalação mais completa, você pode instalar o grupo de pacotes "Servidor Web".
 
