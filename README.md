@@ -1,4 +1,4 @@
-# dev.httpd | Configuração do servidor HTTP Linux
+# 🛠 DEV HTTPD | Configuração do servidor HTTP Linux
 
 Este artigo descreve a instalação e configuração de um servidor HTTP no Linux, com referência específica às informações necessárias para o exame RHCE EX300 .
 
