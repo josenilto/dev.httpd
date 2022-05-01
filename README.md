@@ -276,6 +276,10 @@ http://mysite1.com/group-test.txt
 
 ✅ Crie um diretório chamado **`cgi-bin`** em um host virtual existente.
 
+```bash
+mkdir /www/mysite2.com/html/gci-bin
+```
+
 ✅ Crie um aplicativo CGI simples no diretório, por exemplo, um arquivo chamado **`helloworld.pl`** com o seguinte conteúdo.
 
 ```bash
