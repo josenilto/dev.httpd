@@ -4,5 +4,22 @@ Este artigo descreve a instalação e configuração de um servidor HTTP no Linu
 
 Lembre-se, os exames são práticos, portanto, não importa qual método você use para obter o resultado, desde que o produto final esteja correto.
 
+## Instalação
+
+Para uma instalação mínima do servidor HTTP, emita o comando a seguir.
+
+
+
+Se desejar uma instalação mais completa, você pode instalar o grupo de pacotes "Servidor Web".
+
+
+Certifique-se de que o arquivo "/etc/hosts" contenha referências para o endereço de loopback e o nome do host.
+
+
+
+
+Ligue o servidor HTTP e certifique-se de que ele seja iniciado automaticamente na reinicialização.
+
+
 
 httpd
