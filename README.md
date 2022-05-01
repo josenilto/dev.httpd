@@ -113,8 +113,8 @@ semanage fcontext -a -t httpd_sys_content_t "/var/www/html(/.*)?"
 restorecon -F -R -v /var/www/html
 ```
 
-Você pode verificar a configuração de contexto atual em arquivos e diretórios usando o comando "ls -alZ".
-Mais informações sobre o SELinux podem ser encontradas aqui .
+✅ Você pode verificar a configuração de contexto atual em arquivos e diretórios usando o comando "ls -alZ".  
+✅ Mais informações sobre o SELinux podem ser encontradas aqui .
 
 ## Hosts virtuais
 
