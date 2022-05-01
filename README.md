@@ -21,7 +21,7 @@ yum install httpd
 yum groupinstall "Web Server"
 ```
 
-✅ Certifique-se de que o arquivo **`/etc/hosts`** contenha referências para o endereço de loopback e o nome do host.
+✅ Certifique-se de que o arquivo **`/etc/hosts`** contenha referências para o endereço de **`loopback`** e o nome do host.
 
 ```bash
 127.0.0.1      localhost localhost.localdomain localhost4 localhost4.localdomain4
