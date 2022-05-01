@@ -223,21 +223,52 @@ http://mysite1.com/private/test.txt
 ## Conteúdo Gerenciado em Grupo
 
 ✅ Usando os hosts virtuais definidos anteriormente, habilitaremos o conteúdo gerenciado de grupo para **`mysite1.com`**.
-
 ✅ Crie um grupo do qual os usuários farão parte.
 
 ```bash
-grupoadicionar webdevs
+groupadd webdevs
 ```
 
 ✅ Adicione os usuários necessários ao grupo.
 
+```bash
+# Create new users.
+useradd -g webdevs user1
+useradd -g webdevs user2
+
+# Modify existing users.
+usermod -g webdevs user1
+usermod -g webdevs user2
+```
 
 ✅ Altere a propriedade e as permissões dos diretórios que contêm o conteúdo gerenciado do grupo.
 
+```bash
+chown -R apache.webdevs /www/mysite1.com/html
+chmod -R 775 /www/mysite1.com/html
+chmod -R g+s /www/mysite1.com/html
+```
+
 ✅ Faça login nos dois usuários e verifique se eles podem adicionar e alterar o conteúdo.
 
+```bash
+su - user1
+umask 002
+echo "Test by user1" > /www/mysite1.com/html/group-test.txt
+exit
+logout
+su - user2
+umask 002
+echo "Test by user2" >> /www/mysite1.com/html/group-test.txt
+exit
+logout
+```
+
 ✅ O arquivo com o conteúdo de ambos os usuários é visível usando o seguinte URL.
+
+```bash
+http://mysite1.com/group-test.txt
+```
 
 ✅ Observe a um ask configuração, que permite permissão de **`leitura/gravação`** para o grupo. Essa configuração pode ser colocada no arquivo **`~/.bashrc`** ou **`~/.bash_profile`** para cada usuário.
 
