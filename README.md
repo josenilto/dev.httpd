@@ -177,3 +177,24 @@ Agora você deve ver a página de teste correta em cada um dos seguintes URLs no
 
 
 ✅ Crie um arquivo ".htpasswd" contendo um nome de usuário/senha e adicione uma segunda entrada.
+
+
+Edite o arquivo "/etc/httpd/conf/httpd.conf" com uma entrada como a seguinte.
+
+Recarregue ou reinicie o serviço httpd para que as alterações tenham efeito.
+
+Agora você deve ser solicitado a fornecer um nome de usuário/senha ao tentar acessar o arquivo a seguir.
+
+## Conteúdo Gerenciado em Grupo
+
+✅ Usando os hosts virtuais definidos anteriormente, habilitaremos o conteúdo gerenciado de grupo para **`mysite1.com`**.
+
+✅ Crie um grupo do qual os usuários farão parte.
+
+```bash
+grupoadicionar webdevs
+```
+
+✅ Adicione os usuários necessários ao grupo.
+
+
