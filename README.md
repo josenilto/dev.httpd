@@ -41,5 +41,5 @@ Quaisquer arquivos ou diretórios abaixo desse ponto ficarão visíveis usando u
 
 As alterações no arquivo **`/etc/httpd/conf/httpd.conf`** devem ser seguidas por um recarregamento ou reinicialização do serviço httpd.
 
-
+## Firewall
 
