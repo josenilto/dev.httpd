@@ -225,3 +225,53 @@ grupoadicionar webdevs
 Se você preferir que o diretório "cgi-bin" seja colocado em um local diferente, basta alterar a entrada "ScriptAlias" para refletir o local alterado.
 
 
+## Configuração SSL (HTTPS)
+
+✅ A configuração HTTPS não é um requisito do exame RHCE, mas é útil saber, então eu a incluí.
+✅ Se eles ainda não estiverem instalados, instale os mod_sslpacotes e openssl.crypto-utils
+
+```bash
+yum install mod_ssl openssl crypto-utils
+```
+
+✅ A instalação do mod_sslpacote cria o arquivo de configuração "/etc/httpd/conf.d/ssl.conf", que inclui referências ao certificado e à chave localhost autoassinado padrão. Isso é suficiente para testar a configuração SSL. O serviço httpd deve ser reiniciado para que o módulo seja carregado, mas faremos isso mais tarde.
+
+✅ O genkeycomando pode gerar uma solicitação de certificado ou um novo certificado autoassinado. Para este teste, criei um novo certificado autoassinado. Lembre-se, se você criptografar o certificado com uma senha, precisará digitá-la toda vez que iniciar o servidor HTTP.
+
+```bash
+genkey --makeca rhce1.localdomain
+```
+
+✅ Mova a chave e o certificado para os diretórios relevantes.
+
+```bash
+mv /etc/pki/CA/private/rhce1.localdomain /etc/pki/tls/private/rhce1.localdomain
+mv /etc/pki/CA/rhce1.localdomain /etc/pki/tls/certs/rhce1.localdomain
+```
+
+✅ Adicione/modifique as seguintes linhas no arquivo **`/etc/httpd/conf.d/ssl.conf`**.
+
+```bash
+SSLProtocol ALL -SSLv2 -SSLv3  
+SSLHonorCipherOrder On  
+SSLCipherSuite HIGH:!aNULL:!MD5:!3DES:!DES:!DHE:!RSA
+
+SSLCertificateFile /etc/pki/tls/certs/rhce1.localdomain  
+SSLCertificateKeyFile /etc/pki/tls/private/rhce1.localdomain  
+SSLCACertificateFile /etc/pki/tls/certs/intermediate.crt
+```
+
+✅ Observe que a entrada "SSLCACertificateFile" está comentada. 
+✅ Se você estiver usando um certificado real, provavelmente precisará baixar o pacote intermediário da CA e referenciá-lo usando essa tag.
+
+✅ Reinicie o servidor HTTP.
+
+```bash
+service httpd restart
+```
+
+✅ Desde que você tenha as configurações de firewall corretas, agora você poderá acessar seus aplicativos usando HTTPS.
+
+```bash
+https://rhce1.localdomain
+```
