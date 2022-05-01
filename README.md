@@ -142,3 +142,20 @@ restorecon -F -R -v /www
 ```
 
 ✅ Os hosts virtuais são definidos no arquivo **`/etc/httpd/conf/httpd.conf`**. A definição dos dois hosts virtuais é mostrada abaixo.
+
+
+NomeVirtualHost *:80
+
+<VirtualHost *:80>
+    Nome do servidor www.meusite1.com
+    Serveralias mysite1.com
+    DocumentRoot /www/mysite1.com/html
+    ErrorLog /www/mysite1.com/logs/mysite1.com-error_log
+</VirtualHost>
+
+<VirtualHost *:80>
+    Nome do servidor www.meusite2.com
+    Serveralias mysite2.com
+    DocumentRoot /www/mysite2.com/html
+    ErrorLog /www/mysite2.com/logs/mysite2.com-error_log
+</VirtualHost>
