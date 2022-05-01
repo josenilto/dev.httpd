@@ -43,3 +43,18 @@ As alterações no arquivo **`/etc/httpd/conf/httpd.conf`** devem ser seguidas p
 
 ## Firewall
 
+Se você estiver usando o firewall do Linux, precisará fazer um furo no firewall para a porta 80 (e 443 para HTTPS) para garantir que o servidor HTTP possa ser acessado a partir da rede. Existem várias maneiras de fazer isso:
+
+A caixa de diálogo **`Configuração de firewall`** no menu (Sistema > Administração > Firewall) ou iniciada a partir da linha de comando executando o system-config-firewallcomando. Na seção "Serviços confiáveis", role a lista e marque a opção **`WWW (HTTP)`** e clique no botão "Aplicar".
+
+O utilitário "Configuração de firewall" baseado em texto ( system-config-firewall-tui). Esta é a versão baseada em texto da caixa de diálogo acima.
+
+Usando o iptablesserviço diretamente, conforme descrito aqui . Nesse caso, poderíamos precisar da seguinte entrada.
+
+```bash
+iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+```
+
+
+
+
