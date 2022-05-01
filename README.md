@@ -141,4 +141,4 @@ semanage fcontext -a -t httpd_sys_content_t "/www(/.*)?"
 restorecon -F -R -v /www
 ```
 
-✅ Os hosts virtuais são definidos no arquivo "/etc/httpd/conf/httpd.conf". A definição dos dois hosts virtuais é mostrada abaixo.
+✅ Os hosts virtuais são definidos no arquivo **`/etc/httpd/conf/httpd.conf`**. A definição dos dois hosts virtuais é mostrada abaixo.
