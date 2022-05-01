@@ -124,3 +124,21 @@ restorecon -F -R -v /var/www/html
 ✅ Os hosts virtuais podem ser baseados em IP, mas normalmente são baseados em nome, o que significa que o nome de domínio na URL usada para acessar o servidor da Web determina para qual host virtual a solicitação se destina.
 
 ✅ Crie os seguintes diretórios como locais para dois hosts virtuais. Também criei um arquivo de teste em ambas as raízes do documento.
+
+```bash
+mkdir -p /www/meusite1.com/logs
+mkdir -p /www/meusite1.com/html
+echo "Arquivo de teste MySite1.com" > /www/mysite1.com/html/test.txt
+mkdir -p /www/mysite2.com/logs
+mkdir -p /www/meusite2.com/html
+echo "Arquivo de teste do MySite2.com" > /www/mysite2.com/html/test.txt
+```
+
+✅ Se você estiver usando o **`SELinux`**, certifique-se de que os diretórios e seus conteúdos estejam atribuídos ao contexto correto.
+
+```bash
+semanage fcontext -a -t httpd_sys_content_t "/www(/.*)?"
+restorecon -F -R -v /www
+```
+
+✅ Os hosts virtuais são definidos no arquivo "/etc/httpd/conf/httpd.conf". A definição dos dois hosts virtuais é mostrada abaixo.
