@@ -224,9 +224,33 @@ grupoadicionar webdevs
 
 ✅ Então a definição completa fica assim.
 
+```bash
+<VirtualHost *:80>  
+    ServerName www.mysite2.com  
+    Serveralias mysite2.com  
+    DocumentRoot /www/mysite2.com/html  
+    ErrorLog /www/mysite2.com/logs/mysite2.com-error_log  
+    
+    # Below added to support CGI applications  
+    ScriptAlias /cgi-bin/ /www/mysite2.com/html/gci-bin/  
+    Options +ExecCGI  
+    AddHandler cgi-script .pl .cgi
+</VirtualHost>
+```
+
 ✅ Recarregue ou reinicie o serviço httpd para que as alterações tenham efeito.
 
+```bash
+service httpd reload
+# OR
+service httpd restart
+```
+
 ✅ O aplicativo CGI agora pode ser executado na seguinte URL.
+
+```bash
+http://mysite2.com/cgi-bin/helloworld.pl
+```
 
 Se você preferir que o diretório "cgi-bin" seja colocado em um local diferente, basta alterar a entrada "ScriptAlias" para refletir o local alterado.
 
