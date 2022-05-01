@@ -47,7 +47,7 @@ Se você estiver usando o firewall do Linux, precisará fazer um furo no firewal
 
 A caixa de diálogo **`Configuração de firewall`** no menu (Sistema > Administração > Firewall) ou iniciada a partir da linha de comando executando o system-config-firewallcomando. Na seção "Serviços confiáveis", role a lista e marque a opção **`WWW (HTTP)`** e clique no botão "Aplicar".
 
-✅ O utilitário "Configuração de firewall" baseado em texto ( system-config-firewall-tui).  
+✅ O utilitário **`Configuração de firewall`** baseado em texto **`(system-config-firewall-tui)`**.  
 
 ✅ Esta é a versão baseada em texto da caixa de diálogo acima.
 
@@ -67,15 +67,16 @@ iptables -A INPUT -p tcp --dport 80 -j ACCEPT
 getsebool -a | grep httpd
 ```
 
-allow_httpd_anon_write --> off
-allow_httpd_mod_auth_ntlm_winbind --> off
-allow_httpd_mod_auth_pam --> desligado
-allow_httpd_sys_script_anon_write --> off
-httpd_builtin_scripting --> em
-httpd_can_check_spam --> desativado
-httpd_can_network_connect --> desligado
-httpd_can_network_connect_cobbler --> desligado
-httpd_can_network_connect_db --> desativado
+allow_httpd_anon_write --> off  
+allow_httpd_mod_auth_ntlm_winbind --> off  
+allow_httpd_mod_auth_pam --> desligado  
+allow_httpd_sys_script_anon_write --> off  
+
+httpd_builtin_scripting --> em  
+httpd_can_check_spam --> desativado  
+httpd_can_network_connect --> desligado  
+httpd_can_network_connect_cobbler --> desligado  
+httpd_can_network_connect_db --> desativado  
 httpd_can_network_memcache --> desativado
 httpd_can_network_relay --> desligado
 httpd_can_sendmail --> desativado
