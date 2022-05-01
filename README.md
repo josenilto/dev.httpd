@@ -114,10 +114,13 @@ restorecon -F -R -v /var/www/html
 ```
 
 ✅ Você pode verificar a configuração de contexto atual em arquivos e diretórios usando o comando "ls -alZ".  
+
 ✅ Mais informações sobre o SELinux podem ser encontradas aqui .
 
 ## Hosts virtuais
 
-Os Hosts Virtuais permitem que vários sites sejam hospedados por uma única máquina física, com cada site sendo aparentemente independente um do outro. Os hosts virtuais podem ser baseados em IP, mas normalmente são baseados em nome, o que significa que o nome de domínio na URL usada para acessar o servidor da Web determina para qual host virtual a solicitação se destina.
+✅ Os Hosts Virtuais permitem que vários sites sejam hospedados por uma única máquina física, com cada site sendo aparentemente independente um do outro.  
+
+✅ Os hosts virtuais podem ser baseados em IP, mas normalmente são baseados em nome, o que significa que o nome de domínio na URL usada para acessar o servidor da Web determina para qual host virtual a solicitação se destina.
 
 ✅ Crie os seguintes diretórios como locais para dois hosts virtuais. Também criei um arquivo de teste em ambas as raízes do documento.
