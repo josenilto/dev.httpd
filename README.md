@@ -261,7 +261,7 @@ SSLCertificateKeyFile /etc/pki/tls/private/rhce1.localdomain
 SSLCACertificateFile /etc/pki/tls/certs/intermediate.crt
 ```
 
-✅ Observe que a entrada "SSLCACertificateFile" está comentada.  
+✅ Observe que a entrada **`SSLCACertificateFile`** está comentada.  
 ✅ Se você estiver usando um certificado real, provavelmente precisará baixar o pacote intermediário da CA e referenciá-lo usando essa tag.  
 ✅ Reinicie o servidor HTTP.
 
