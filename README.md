@@ -178,7 +178,7 @@ Agora você deve ver a página de teste correta em cada um dos seguintes URLs no
 
 ## Diretórios Privados
 
-✅ Usando os hosts virtuais que criamos anteriormente, crie um novo diretório chamado "private" e coloque um arquivo nele.
+✅ Usando os hosts virtuais que criamos anteriormente, crie um novo diretório chamado **`private`** e coloque um arquivo nele.
 
 ```bash
 mkdir /www/mysite1.com/html/private
@@ -193,7 +193,7 @@ htpasswd -cmb .htpasswd user1 password1
 htpasswd -mb .htpasswd user2 password2
 ```
 
-Edite o arquivo "/etc/httpd/conf/httpd.conf" com uma entrada como a seguinte.
+✅ Edite o arquivo **`/etc/httpd/conf/httpd.conf`** com uma entrada como a seguinte.
 
 ```bash
 <Directory "/www/mysite1.com/html/private">  
@@ -206,7 +206,7 @@ Edite o arquivo "/etc/httpd/conf/httpd.conf" com uma entrada como a seguinte.
 </Directory>
 ```
 
-Recarregue ou reinicie o serviço httpd para que as alterações tenham efeito.
+✅ Recarregue ou reinicie o serviço httpd para que as alterações tenham efeito.
 
 ```bash
 service httpd reload
@@ -214,7 +214,7 @@ service httpd reload
 service httpd restart
 ```
 
-Agora você deve ser solicitado a fornecer um nome de usuário/senha ao tentar acessar o arquivo a seguir.
+✅ Agora você deve ser solicitado a fornecer um nome de usuário/senha ao tentar acessar o arquivo a seguir.
 
 ```bash
 http://mysite1.com/private/test.txt
