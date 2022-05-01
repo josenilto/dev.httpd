@@ -93,11 +93,11 @@ httpd_ssi_exec --> desligado
 httpd_tmp_exec --> desligado  
 httpd_tty_comm --> em  
 httpd_unified --> em  
-httpd_use_cifs --> desligado  
-httpd_use_gpg --> desativado  
-httpd_use_nfs --> desligado  
-httpd_use_openstack --> desligado  
-httpd_verify_dns --> desativado
+httpd_use_cifs          --> desligado  
+httpd_use_gpg           --> desativado  
+httpd_use_nfs           --> desligado  
+httpd_use_openstack     --> desligado  
+httpd_verify_dns        --> desativado
 
 ✅ O setseboolcomando é usado para definir um valor booleano específico.
 
