@@ -198,3 +198,8 @@ grupoadicionar webdevs
 ✅ Adicione os usuários necessários ao grupo.
 
 
+✅ Altere a propriedade e as permissões dos diretórios que contêm o conteúdo gerenciado do grupo.
+
+✅ Faça login nos dois usuários e verifique se eles podem adicionar e alterar o conteúdo.
+
+✅ O arquivo com o conteúdo de ambos os usuários é visível usando o seguinte URL.
