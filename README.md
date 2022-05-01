@@ -185,7 +185,7 @@ mkdir /www/mysite1.com/html/private
 echo "MySite1.com Private Test file" > /www/mysite1.com/html/private/test.txt
 ```
 
-✅ Crie um arquivo ".htpasswd" contendo um nome de usuário/senha e adicione uma segunda entrada.
+✅ Crie um arquivo **`.htpasswd`** contendo um nome de **`usuário/senha`** e adicione uma segunda entrada.
 
 ```bash
 cd /www/mysite1.com/html/private
@@ -214,7 +214,7 @@ service httpd reload
 service httpd restart
 ```
 
-✅ Agora você deve ser solicitado a fornecer um nome de usuário/senha ao tentar acessar o arquivo a seguir.
+✅ Agora você deve ser solicitado a fornecer um nome de **`usuário/senha`** ao tentar acessar o arquivo a seguir.
 
 ```bash
 http://mysite1.com/private/test.txt
