@@ -215,7 +215,7 @@ sudo firewall-cmd --list-all
 ✅ Os booleanos do SELinux associados ao serviço httpd são exibidos usando o getseboolcomando.
 
 ```bash
-getsebool -a | grep httpd
+sudo getsebool -a | grep httpd
 ```
 
 ```bash
