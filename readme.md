@@ -211,7 +211,7 @@ sudo firewall-cmd --list-all
 
 ## SELinux
 
-✅ Se você estiver usando o SELinux, precisará considerar os seguintes pontos.
+✅ Se você estiver usando o SELinux, precisará considerar os seguintes pontos.  
 ✅ Os booleanos do SELinux associados ao serviço httpd são exibidos usando o getseboolcomando.
 
 ```bash
