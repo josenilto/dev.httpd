@@ -575,3 +575,9 @@ https://rhce1.localdomain
 sudo date; netstat -n | grep :80 |wc -l
 ```
 
+✅ No servidor onde está o Apache execute o comando para verificar as conexões ativas e perceba o nível elevado  de conexões em nosso servidor devido ao ataque.
+
+```bash
+while true; do netstat -n | grep :80 |wc -l; sleep 1; done
+```
+
