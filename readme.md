@@ -116,6 +116,29 @@ sudo systemctl status apache2   [No Systemd]
 sudo service apache2 status     [No SysVInit]
 ```
 
+✅ Parar o serviço Web Apache, para parar o serviço, usem um dos seguintes comandos.
+
+```bash
+------------ No CentOS/RHEL ------------ 
+sudo systemctl stop httpd       [No Systemd]
+sudo service httpd stop 	  [No SysVInit]
+ 
+------------ No Ubuntu/Debian  ------------
+sudo systemctl stop apache2     [No Systemd]
+sudo service apache2 stop     [No SysVInit]
+```
+
+✅ Outros comandos/parâmetros.
+
+Para saber que outros parâmetros podem usar com o comando httpd e apache2 usem o parâmetro -h
+
+```bash
+sudo httpd -h 
+sudo apache2 -h 
+
+sudo systemctl -h apache2
+```
+
 ## Firewall
 
 ✅ Se você estiver usando o firewall do Linux, precisará fazer um furo no firewall para a porta 80 (e 443 para HTTPS) para garantir que o servidor HTTP possa ser acessado a partir da rede. Existem várias maneiras de fazer isso:
