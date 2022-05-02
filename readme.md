@@ -553,3 +553,23 @@ sudo service httpd restart
 ```bash
 https://rhce1.localdomain
 ```
+
+
+# Proteja-se Contra Ataque de Negação de Serviço com Mod Evasive
+
+✅ Mod_evasive é um módulo para Apache Web Server que previne ataques do tipo DDoS.  
+✅ Ele é projetado para “barrar” conexões HTTP e HTTPS quando as mesmas ultrapassam os limites preestabelecidos. 
+✅ Ataques de negação de serviço são cada vez mais comuns acredito que pela facilidade da realização de um ataque básico. 
+✅ O ataque baseia-se em executar no alvo  enormes quantidades de tráfego, em uma tentativa de deixá-lo inacessível.  
+
+✅ Normalmente utilizamos o Apache em conjunto com o JBoss o que torna essa configuração essencial para termos um ambiente mais seguro e menos sujeito a ataques desse tipo.
+
+✅ Uma maneira rápida e simples de verificar se o servidor está sofrendo um ataque DDoS é verificar o número de conexões ativas que estão abertas no servidor.  
+✅ Se estiver acima de 500 é um indício de que um ataque pode estar ocorrendo.  
+
+✅ Para visualizar essas conexões execute.
+
+```bash
+netstat -n | grep :80 |wc -l
+```
+
