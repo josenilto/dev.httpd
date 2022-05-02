@@ -65,7 +65,6 @@ sudo chkconfig httpd on
 
 ```bash
 sudo service httpd reload
-# OR
 sudo service httpd restart
 ```
 
@@ -225,11 +224,12 @@ restorecon -F -R -v /var/www/html
 ✅ Crie os seguintes diretórios como locais para dois hosts virtuais. Também criei um arquivo de teste em ambas as raízes do documento.
 
 ```bash
-mkdir -p /www/meusite1.com/logs
-mkdir -p /www/meusite1.com/html
+sudo mkdir -p /www/meusite1.com/logs
+sudo mkdir -p /www/meusite1.com/html
 echo "Arquivo de teste MySite1.com" > /www/mysite1.com/html/test.txt
-mkdir -p /www/mysite2.com/logs
-mkdir -p /www/meusite2.com/html
+
+sudo mkdir -p /www/mysite2.com/logs
+sudo mkdir -p /www/meusite2.com/html
 echo "Arquivo de teste do MySite2.com" > /www/mysite2.com/html/test.txt
 ```
 
@@ -263,9 +263,8 @@ NameVirtualHost *:80
 ✅ Recarregue ou reinicie o serviço httpd para que as alterações tenham efeito.
 
 ```bash
-service httpd reload
-# OR
-service httpd restart
+sudo service httpd reload
+sudo service httpd restart
 ```
 
 ✅ Desde que o DNS, ou arquivo hosts, resolva os nomes **`meusite1.com`** e **`meusite2.com`** para o endereço IP do servidor da Web, as páginas sob as raízes do documento agora serão exibidas para cada host virtual. Para testar isso, você pode alterar seu arquivo hosts com as seguintes entradas.
@@ -287,7 +286,7 @@ http://mysite2.com/test.txt
 ✅ Usando os hosts virtuais que criamos anteriormente, crie um novo diretório chamado **`private`** e coloque um arquivo nele.
 
 ```bash
-mkdir /www/mysite1.com/html/private
+sudo mkdir /www/mysite1.com/html/private
 echo "MySite1.com Private Test file" > /www/mysite1.com/html/private/test.txt
 ```
 
@@ -315,9 +314,8 @@ htpasswd -mb .htpasswd user2 password2
 ✅ Recarregue ou reinicie o serviço httpd para que as alterações tenham efeito.
 
 ```bash
-service httpd reload
-# OR
-service httpd restart
+sudo service httpd reload
+sudo service httpd restart
 ```
 
 ✅ Agora você deve ser solicitado a fornecer um nome de **`usuário/senha`** ao tentar acessar o arquivo a seguir.
@@ -332,7 +330,7 @@ http://mysite1.com/private/test.txt
 ✅ Crie um grupo do qual os usuários farão parte.
 
 ```bash
-groupadd webdevs
+sudo groupadd webdevs
 ```
 
 ✅ Adicione os usuários necessários ao grupo.
@@ -350,9 +348,9 @@ usermod -g webdevs user2
 ✅ Altere a propriedade e as permissões dos diretórios que contêm o conteúdo gerenciado do grupo.
 
 ```bash
-chown -R apache.webdevs /www/mysite1.com/html
-chmod -R 775 /www/mysite1.com/html
-chmod -R g+s /www/mysite1.com/html
+sudo chown -R apache.webdevs /www/mysite1.com/html
+sudo chmod -R 775 /www/mysite1.com/html
+sudo chmod -R g+s /www/mysite1.com/html
 ```
 
 ✅ Faça login nos dois usuários e verifique se eles podem adicionar e alterar o conteúdo.
@@ -384,7 +382,7 @@ http://mysite1.com/group-test.txt
 ✅ Crie um diretório chamado **`cgi-bin`** em um host virtual existente.
 
 ```bash
-mkdir /www/mysite2.com/html/gci-bin
+sudo mkdir /www/mysite2.com/html/gci-bin
 ```
 
 ✅ Crie um aplicativo CGI simples no diretório, por exemplo, um arquivo chamado **`helloworld.pl`** com o seguinte conteúdo.
@@ -398,8 +396,8 @@ print "helloWorld!";
 ✅ Altere a propriedade e verifique se o arquivo é executável.
 
 ```bash
-chown apache.apache helloworld.pl
-chmod u+x helloworld.pl
+sudo chown apache.apache helloworld.pl
+sudo chmod u+x helloworld.pl
 ```
 
 ✅ Edite o arquivo **`/etc/httpd/conf/httpd.conf`**, incluindo as seguintes entradas na definição do host virtual.
@@ -429,9 +427,8 @@ AddHandler cgi-script .pl .cgi
 ✅ Recarregue ou reinicie o serviço httpd para que as alterações tenham efeito.
 
 ```bash
-service httpd reload
-# OR
-service httpd restart
+sudo service httpd reload
+sudo service httpd restart
 ```
 
 ✅ O aplicativo CGI agora pode ser executado na seguinte URL.
@@ -449,7 +446,7 @@ Se você preferir que o diretório "cgi-bin" seja colocado em um local diferente
 ✅ Se eles ainda não estiverem instalados, instale os pacotes **`mod_ssl`** e **`crypto-utils`**.
 
 ```bash
-yum install mod_ssl openssl crypto-utils
+sudo yum install mod_ssl openssl crypto-utils
 ```
 
 ✅ A instalação do pacote **`mod_ssl`**, cria o arquivo de configuração **`/etc/httpd/conf.d/ssl.conf`**, que inclui referências ao certificado e à chave localhost autoassinado padrão. Isso é suficiente para testar a configuração SSL.  
@@ -467,8 +464,8 @@ genkey --makeca rhce1.localdomain
 ✅ Mova a chave e o certificado para os diretórios relevantes.
 
 ```bash
-mv /etc/pki/CA/private/rhce1.localdomain /etc/pki/tls/private/rhce1.localdomain
-mv /etc/pki/CA/rhce1.localdomain /etc/pki/tls/certs/rhce1.localdomain
+sudo mv /etc/pki/CA/private/rhce1.localdomain /etc/pki/tls/private/rhce1.localdomain
+sudo mv /etc/pki/CA/rhce1.localdomain /etc/pki/tls/certs/rhce1.localdomain
 ```
 
 ✅ Adicione/modifique as seguintes linhas no arquivo **`/etc/httpd/conf.d/ssl.conf`**.
@@ -489,7 +486,7 @@ SSLCACertificateFile /etc/pki/tls/certs/intermediate.crt
 ✅ Reinicie o servidor HTTP.
 
 ```bash
-service httpd restart
+sudo service httpd restart
 ```
 
 ✅ Desde que você tenha as configurações de firewall corretas, agora você poderá acessar seus aplicativos usando HTTPS.
