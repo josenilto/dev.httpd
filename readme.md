@@ -71,61 +71,61 @@ sudo service httpd restart
 ✅ Iniciar o serviço, para iniciar o servidor Web, deve usar um dos comandos, de acordo com a versão do Linux em uso.
 
 ```bash
------------------ No CentOS/RHEL --------------
-sudo systemctl start httpd      [No Systemd]
-sudo service httpd start 	      [No SysVInit]
+-------- No CentOS/RHEL -------- 
+sudo systemctl start httpd
+sudo service httpd start
  
--------------- No Ubuntu/Debian  --------------
-sudo systemctl start apache2    [No Systemd]
-sudo service apache2 start      [No SysVInit]
+-------- No Ubuntu/Debian --------
+sudo systemctl start apache2
+sudo service apache2 start
 ```
 
 ✅ Ativar o Apache no arranque, para proceder à ativação do Apache no arranque, deve usar um dos seguintes comandos.
 
 ```bash
------------------ No CentOS/RHEL -------------- 
-sudo systemctl enable httpd     [No Systemd]
-sudo chkconfig httpd on 	       [No SysVInit]
+-------- No CentOS/RHEL -------- 
+sudo systemctl enable httpd
+sudo chkconfig httpd on
  
--------------- No Ubuntu/Debian  --------------
-sudo systemctl enable apache2   [No Systemd]
-sudo chkconfig apache2 on       [No SysVInit]
+-------- No Ubuntu/Debian --------
+sudo systemctl enable apache2
+sudo chkconfig apache2 on
 ```
 
 ✅ Restart ao Apache, para reiniciar o Apache deve usar um dos seguintes comandos.
 
 ```bash
------------------ No CentOS/RHEL -------------- 
-sudo systemctl restart httpd     [On Systemd]
-sudo service httpd restart 	     [On SysVInit]
+-------- No CentOS/RHEL --------
+sudo systemctl restart httpd
+sudo service httpd restart
  
--------------- No Ubuntu/Debian  --------------
-sudo systemctl restart apache2   [On Systemd]
-sudo service apache2 restart     [On SysVInit]
+-------- No Ubuntu/Debian --------
+sudo systemctl restart apache2
+sudo service apache2 restart
 ```
 
 ✅ Saber o estado do serviço Web Apache, para saber o estado (status) do serviço, usem um dos seguintes comandos.
 
 ```bash
------------------ No CentOS/RHEL -------------- 
-sudo systemctl status httpd     [No Systemd]
-sudo service httpd status 	     [No SysVInit]
+-------- No CentOS/RHEL -------- 
+sudo systemctl status httpd
+sudo service httpd status
  
--------------- No Ubuntu/Debian  --------------
-sudo systemctl status apache2   [No Systemd]
-sudo service apache2 status     [No SysVInit]
+-------- No Ubuntu/Debian --------
+sudo systemctl status apache2
+sudo service apache2 status
 ```
 
 ✅ Parar o serviço Web Apache, para parar o serviço, usem um dos seguintes comandos.
 
 ```bash
------------- No CentOS/RHEL ------------ 
-sudo systemctl stop httpd       [No Systemd]
-sudo service httpd stop 	  [No SysVInit]
+-------- No CentOS/RHEL -------- 
+sudo systemctl stop httpd
+sudo service httpd stop
  
------------- No Ubuntu/Debian  ------------
-sudo systemctl stop apache2     [No Systemd]
-sudo service apache2 stop     [No SysVInit]
+-------- No Ubuntu/Debian --------
+sudo systemctl stop apache2
+sudo service apache2 stop
 ```
 
 ✅ Outros comandos/parâmetros.
