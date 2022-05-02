@@ -390,11 +390,11 @@ sudo groupadd webdevs
 ✅ Adicione os usuários necessários ao grupo.
 
 ```bash
-# Create new users.
+# Crie novos usuários.
 sudo useradd -g webdevs user1
 sudo useradd -g webdevs user2
 
-# Modify existing users.
+# Modifica usuários existentes.
 sudo usermod -g webdevs user1
 sudo usermod -g webdevs user2
 ```
