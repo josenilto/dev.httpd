@@ -55,6 +55,7 @@ service httpd restart
 ✅ A caixa de diálogo **`Configuração de firewall`** no menu (Sistema > Administração > Firewall) ou iniciada a partir da linha de comando executando o system-config-firewallcomando. Na seção "Serviços confiáveis", role a lista e marque a opção **`WWW (HTTP)`** e clique no botão "Aplicar".
 
 ✅ O utilitário **`Configuração de firewall`** baseado em texto **`(system-config-firewall-tui)`**. Esta é a versão baseada em texto da caixa de diálogo acima.  
+
 ✅ Usando o iptables serviço diretamente, conforme descrito aqui . Nesse caso, poderíamos precisar da seguinte entrada.
 
 ```bash
