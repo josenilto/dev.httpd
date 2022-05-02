@@ -46,11 +46,59 @@ sudo yum groupinstall "Web Server"
 192.168.122.89 rhce1.localdomain rhce1
 ```
 
-✅ Ligue o servidor HTTP e certifique-se de que ele seja iniciado automaticamente na reinicialização.
+✅ Ligue o servidor HTTP e certifique-se de que ele seja parar e iniciar automaticamente na reinicialização.
 
 ```bash
+sudo service httpd stop
 sudo service httpd start
+```
+
+✅ Ver lista completa de serviços usando chkconfig.
+
+```bash
+sudo chkconfig --list
+```
+
+✅ Veja a lista completa de serviços que iniciam na inicialização (normalmente, nível de execução 3).
+
+```bash
+sudo chkconfig --list | grep 3:on
+```
+
+Ativar um serviço para os níveis de execução padrão (2,3,4,5).
+
+```bash
 sudo chkconfig httpd on
+```
+
+✅ Desativar um serviço para os níveis de execução padrão (2,3,4,5).
+
+```bash
+sudo chkconfig httpd off
+```
+
+✅ Ativar um serviço para um nível de execução selecionado.
+
+```bash
+sudo chkconfig --level 3 httpd on
+```
+
+✅ Também é possível combinar vários níveis em um comando.
+
+```bash
+sudo chkconfig --level 35 httpd on
+```
+
+✅ Desativar um serviço para um nível de execução selecionado.
+
+```bash
+sudo chkconfig --level 3 httpd off
+```
+
+✅ Também é possível combinar vários níveis em um comando.
+
+```bash
+sudo chkconfig --level 35 httpd off
 ```
 
 ✅ O servidor HTTP agora está instalado e em execução.  
