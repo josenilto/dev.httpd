@@ -391,12 +391,12 @@ sudo groupadd webdevs
 
 ```bash
 # Create new users.
-useradd -g webdevs user1
-useradd -g webdevs user2
+sudo useradd -g webdevs user1
+sudo useradd -g webdevs user2
 
 # Modify existing users.
-usermod -g webdevs user1
-usermod -g webdevs user2
+sudo usermod -g webdevs user1
+sudo usermod -g webdevs user2
 ```
 
 ✅ Altere a propriedade e as permissões dos diretórios que contêm o conteúdo gerenciado do grupo.
