@@ -199,7 +199,7 @@ sudo systemctl -h apache2
 iptables -A INPUT -p tcp --dport 80 -j ACCEPT
 ```
 
-✅ Abra a porta do firewall para httpd.
+✅ Abra a porta do firewall para httpd.  
 ✅ Se você tiver um serviço firewalld em execução, permita a porta **`:80`** de acesso ao browser da rede:
 
 ```bash
@@ -212,7 +212,6 @@ sudo firewall-cmd --list-all
 ## SELinux
 
 ✅ Se você estiver usando o SELinux, precisará considerar os seguintes pontos.
-
 ✅ Os booleanos do SELinux associados ao serviço httpd são exibidos usando o getseboolcomando.
 
 ```bash
@@ -268,7 +267,6 @@ restorecon -F -R -v /var/www/html
 ```
 
 ✅ Você pode verificar a configuração de contexto atual em arquivos e diretórios usando o comando "ls -alZ".  
-
 ✅ Mais informações sobre o SELinux podem ser encontradas aqui .
 
 ## Hosts virtuais
