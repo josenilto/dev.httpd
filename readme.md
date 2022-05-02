@@ -1,4 +1,4 @@
-# 🛠 DEV HTTPD | Configurações do serviços HTTP no linux
+# 🛠 DEV HTTPD | Configurações do serviços no linux
 
 ✅ Este artigo descreve a instalação e configuração de um servidor HTTP no Linux, com referência específica às informações necessárias para o exame RHCE EX300.  
 
