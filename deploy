@@ -1,0 +1,51 @@
+#! /bin/bash
+
+CRQ=CRQ0000001
+
+site=login.servico.caixa
+#site=login.prd.caixa
+#site=siset.prd.caixa
+#site=login.caixa.gov.br
+
+ARQ="dependencies.x.jar"
+SSO_HOME=/opt/open/sso/7.3.0
+
+DIRBKP=/opt/open/sso/7.3.0/jobs/bkp/${CRQ}
+#DIRBKP=/tmp/deploy/TAS0000001
+#DIRBKP=/projetos_SSO/${site}/DEPLOY/${CRQ}/BKP
+
+DIRBUILD=/projetos_SSO/${site}/DEPLOY/${CRQ}
+#DIRBUILD=/var/tmp/${CRQ}
+#DIRBUILD=/projetos/${site}/DEPLOY/${CRQ}
+
+echo "Inicio deploy pacotes ${CRQ}"
+for arq_deploy in `echo ${ARQ}`
+do 
+    
+    echo "Removendo pacote antigo = ${arq_deploy}"
+    md5_antes = `md5sum ${SSO_HOME}/standalone/deployments/${arq_deploy}`
+    rm -f ${SSO_HOME}/standalone/deployments/${arq_deploy}
+    
+    white [ ! -f ${SSO_HOME}/standalone/deployments/${arq_deploy}.undeployed ]
+        do echo "Nao tem arquivo"
+        sleep 1
+        done 
+    
+    echo "Apagando ${arq_deploy}.undeployed"
+    rm -f ${SSO_HOME}/standalone/deployments/${arq_deploy}.undeployed
+    
+    echo "Iniciando deploy"
+    cp -pf $DIRBUILD/${arq_deploy} ${SSO_HOME}/standalone/deployments/${arq_deploy}
+    # cp -pf $DIRBKP/${arq_deploy} ${SSO_HOME}/standalone/deployments/${arq_deploy}
+    chown spssopr1:sso ${SSO_HOME}/standalone/deployments/${arq_deploy}
+    
+    while [ ! -f ${SSO_HOME}/standalone/deployments/${arq_deploy}.deployed ]
+        do echo "Nao tem arquivo"
+        sleep 1
+        done 
+    
+    md5_depois = `md5sum ${SSO_HOME}/standalone/deployments/${arq_deploy}`
+    echo "MD5 antes do deploy - ${arq_deploy} = ${md5_antes}"
+    echo "MD5 depois do deploy - ${arq_deploy} = ${md5_depois}"
+
+done 
