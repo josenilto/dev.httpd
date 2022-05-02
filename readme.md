@@ -397,6 +397,11 @@ sudo useradd -g webdevs user2
 # Modifica usuários existentes.
 sudo usermod -g webdevs user1
 sudo usermod -g webdevs user2
+
+# Remover usuários existentes.
+sudo userdel -g webdevs user1
+sudo userdel -g webdevs user2
+
 ```
 
 ✅ Altere a propriedade e as permissões dos diretórios que contêm o conteúdo gerenciado do grupo.
