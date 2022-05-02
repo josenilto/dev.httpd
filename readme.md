@@ -558,7 +558,7 @@ https://rhce1.localdomain
 ### Proteja-se Contra Ataque de Negação de Serviço com Mod Evasive
 
 ✅ **`Mod_evasive`** é um módulo para Apache Web Server que previne ataques do tipo DDoS.  
-✅ Ele é projetado para **`barrar`** conexões HTTP e HTTPS quando as mesmas ultrapassam os limites preestabelecidos. 
+✅ Ele é projetado para **`barrar`** conexões HTTP e HTTPS quando as mesmas ultrapassam os limites preestabelecidos.  
 ✅ Ataques de negação de serviço são cada vez mais comuns acredito que pela facilidade da realização de um ataque básico.  
 
 ✅ O ataque baseia-se em executar no alvo  enormes quantidades de tráfego, em uma tentativa de deixá-lo inacessível.  
