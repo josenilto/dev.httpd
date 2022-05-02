@@ -73,7 +73,7 @@ sudo service httpd restart
 ```bash
 ----------------- No CentOS/RHEL --------------
 sudo systemctl start httpd      [No Systemd]
-sudo service httpd start 	    [No SysVInit]
+sudo service httpd start 	      [No SysVInit]
  
 -------------- No Ubuntu/Debian  --------------
 sudo systemctl start apache2    [No Systemd]
@@ -85,7 +85,7 @@ sudo service apache2 start      [No SysVInit]
 ```bash
 ----------------- No CentOS/RHEL -------------- 
 sudo systemctl enable httpd     [No Systemd]
-sudo chkconfig httpd on 	    [No SysVInit]
+sudo chkconfig httpd on 	       [No SysVInit]
  
 -------------- No Ubuntu/Debian  --------------
 sudo systemctl enable apache2   [No Systemd]
@@ -109,7 +109,7 @@ sudo service apache2 restart     [On SysVInit]
 ```bash
 ----------------- No CentOS/RHEL -------------- 
 sudo systemctl status httpd     [No Systemd]
-sudo service httpd status 	    [No SysVInit]
+sudo service httpd status 	     [No SysVInit]
  
 -------------- No Ubuntu/Debian  --------------
 sudo systemctl status apache2   [No Systemd]
