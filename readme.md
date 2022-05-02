@@ -13,10 +13,10 @@
 ✅ Para uma instalação mínima do servidor HTTP, emita o comando a seguir.
 
 ```bash
-sudo apt install apache2    [No Debian/Ubuntu]
-sudo yum install httpd      [No RHEL/Centos]
-sudo dnf install httpd      [No Fedora 22+]
-sudo zypper install apache2 [No openSUSE]
+sudo apt install apache2        [No Debian/Ubuntu]
+sudo yum install httpd          [No RHEL/Centos]
+sudo dnf install httpd          [No Fedora 22+]
+sudo zypper install apache2     [No openSUSE]
 ```
 
 ✅ Verificar a versão, depois de instalado, pode verificar a versão com um dos seguintes comandos.
@@ -38,7 +38,7 @@ sudo apache2ctl -t
 ✅ Se desejar uma instalação mais completa, você pode instalar o grupo de pacotes **`Servidor Web`**.
 
 ```bash
-yum groupinstall "Web Server"
+sudo yum groupinstall "Web Server"
 ```
 
 ✅ Certifique-se de que o arquivo **`/etc/hosts`** contenha referências para o endereço de **`loopback`** e o nome do host.
@@ -51,8 +51,8 @@ yum groupinstall "Web Server"
 ✅ Ligue o servidor HTTP e certifique-se de que ele seja iniciado automaticamente na reinicialização.
 
 ```bash
-service httpd start
-chkconfig httpd on
+sudo service httpd start
+sudo chkconfig httpd on
 ```
 
 ✅ O servidor HTTP agora está instalado e em execução.  
@@ -63,9 +63,57 @@ chkconfig httpd on
 ✅ As alterações no arquivo **`/etc/httpd/conf/httpd.conf`** devem ser seguidas por um recarregamento ou reinicialização do serviço httpd.
 
 ```bash
-service httpd reload
+sudo service httpd reload
 # OR
-service httpd restart
+sudo service httpd restart
+```
+
+✅ Iniciar o serviço, para iniciar o servidor Web, deve usar um dos comandos, de acordo com a versão do Linux em uso.
+
+```bash
+----------------- No CentOS/RHEL --------------
+sudo systemctl start httpd      [No Systemd]
+sudo service httpd start 	    [No SysVInit]
+ 
+-------------- No Ubuntu/Debian  --------------
+sudo systemctl start apache2    [No Systemd]
+sudo service apache2 start      [No SysVInit]
+```
+
+✅ Ativar o Apache no arranque, para proceder à ativação do Apache no arranque, deve usar um dos seguintes comandos.
+
+```bash
+----------------- No CentOS/RHEL -------------- 
+sudo systemctl enable httpd     [No Systemd]
+sudo chkconfig httpd on 	    [No SysVInit]
+ 
+-------------- No Ubuntu/Debian  --------------
+sudo systemctl enable apache2   [No Systemd]
+sudo chkconfig apache2 on       [No SysVInit]
+```
+
+✅ Restart ao Apache, para reiniciar o Apache deve usar um dos seguintes comandos.
+
+```bash
+----------------- No CentOS/RHEL -------------- 
+sudo systemctl restart httpd     [On Systemd]
+sudo service httpd restart 	     [On SysVInit]
+ 
+-------------- No Ubuntu/Debian  --------------
+sudo systemctl restart apache2   [On Systemd]
+sudo service apache2 restart     [On SysVInit]
+```
+
+✅ Saber o estado do serviço Web Apache, para saber o estado (status) do serviço, usem um dos seguintes comandos.
+
+```bash
+----------------- No CentOS/RHEL -------------- 
+sudo systemctl status httpd     [No Systemd]
+sudo service httpd status 	    [No SysVInit]
+ 
+-------------- No Ubuntu/Debian  --------------
+sudo systemctl status apache2   [No Systemd]
+sudo service apache2 status     [No SysVInit]
 ```
 
 ## Firewall
