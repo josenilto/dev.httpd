@@ -272,6 +272,7 @@ umask 002
 echo "Test by user1" > /www/mysite1.com/html/group-test.txt
 exit
 logout
+
 su - user2
 umask 002
 echo "Test by user2" >> /www/mysite1.com/html/group-test.txt
