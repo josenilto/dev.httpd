@@ -572,6 +572,6 @@ https://rhce1.localdomain
 ✅ Para visualizar essas conexões execute.
 
 ```bash
-netstat -n | grep :80 |wc -l
+sudo date; netstat -n | grep :80 |wc -l
 ```
 
