@@ -8,15 +8,16 @@
 ✅ Artigos relacionados.
 
 
+
 ## Instalação
 
-✅ Para uma instalação mínima do servidor HTTP, emita o comando a seguir.
+Para uma instalação mínima do servidor HTTP, emita o comando a seguir.
 
 ```bash
-sudo apt install apache2        [No Debian/Ubuntu]
-sudo yum install httpd          [No RHEL/Centos]
-sudo dnf install httpd          [No Fedora 22+]
-sudo zypper install apache2     [No openSUSE]
+  sudo apt install apache2        [No Debian/Ubuntu]
+  sudo yum install httpd          [No RHEL/Centos]
+  sudo dnf install httpd          [No Fedora 22+]
+  sudo zypper install apache2     [No openSUSE]
 ```
 
 ✅ Verificar a versão, depois de instalado, pode verificar a versão com um dos seguintes comandos.
